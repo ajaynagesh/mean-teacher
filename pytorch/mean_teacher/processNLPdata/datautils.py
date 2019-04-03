@@ -322,6 +322,8 @@ class Datautils:
                 else:
                     syntax_str = ''
 
+                # no need to choose the cloest pair of entities when entity appear more than once in sentence, since it is done seperatedly in scala when generate the syntactical dataset
+
                 syntax_tokens = re.split(r'(\\n| |#|%|\'|\"|,|:|-|_|;|!|=|\(|\)|\$|\?|\*|\+|\]|\[|\{|\}|\\|\||\^|\`|\~)', syntax_str)
 
                 entity1 = entity1.lower()

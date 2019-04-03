@@ -217,8 +217,8 @@ class FeedForwardMLPEmbed_RE(nn.Module):
 
     def forward(self, input_tuple):
         input = input_tuple[0]
-        seq_lengths = input_tuple[1]   # LongTensor
-        pad_id = input_tuple[2]
+        seq_lengths = input_tuple[1]   # LongTensor, length before padding
+        pad_id = input_tuple[2]    # the id corresponds to mask
 
         # Embed the input
         embedded = self.embeddings(input)   # embedded.shape: torch.Size([256, 66, 100])
